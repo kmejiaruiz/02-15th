@@ -1,0 +1,19 @@
+.cursor {
+  display: inline-block;
+  vertical-align: middle;
+  width: 5px;
+  height: 25px;
+  background-color: rgb(255, 255, 255);
+  animation: blink 0.8s infinite;
+}
+
+/* Animación del cursor */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

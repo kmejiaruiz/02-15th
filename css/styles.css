@@ -1,0 +1,64 @@
+/* Agrega este estilo para las imágenes del carrusel */
+.carousel-image {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+#dedication {
+  background: url("/assets/p4.jpg") center top/cover no-repeat;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  /* padding: 100px; */
+  height: 100vh !important;
+  position: relative;
+  z-index: 1;
+}
+
+#dedication::after {
+  content: "";
+  height: 100%;
+  background: rgba(0, 0, 0, 0.41);
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+#dedication-content {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  z-index: 1;
+}
+
+#dedication-content > p {
+    font-size: 20px;
+}
+#timer {
+  font-size: 24px;
+  margin-top: 20px;
+}

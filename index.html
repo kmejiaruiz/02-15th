@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuenta atrás y Galería de Fotos</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/cursor.css">
+    <!-- Incluye el enlace a jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Incluye el enlace a Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+  </head>
+  <body oncontextmenu="return false">
+    <div id="dedication" class="hidden">
+      <div id="dedication-content">
+        <h1>Para mi <span id="typed-text-h"></span> <span class="cursor"></span></h1>
+        <p>
+          Te dedico este espacio con todo mi cariño. Eres <span id="typed-text"></span> <span class="cursor"></span>
+        </p>
+      </div>
+    </div>
+
+    <div id="countdown">
+      <h1>Cuenta atrás para el 15 de febrero de 2024</h1>
+      <div id="timer"></div>
+    </div>
+
+    <div id="gallery" class="hidden">
+      <h1>¡Feliz día, mi amor!</h1>
+      <div id="photoCarousel" class="owl-carousel owl-theme"></div>
+    </div>
+
+    <!-- Incluye el enlace a Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./js/countdown.js"></script>
+    <script src="./js/gallery.js"></script>
+    <script src="./js/cursor-p.js"></script>
+    <script src="./js/cursor-h.js"></script>
+  </body>
+</html>
