@@ -56,9 +56,33 @@ body {
 }
 
 #dedication-content > p {
-    font-size: 20px;
+  font-size: 20px;
 }
 #timer {
   font-size: 24px;
   margin-top: 20px;
+}
+
+/* Agrega estilos para el mosaico */
+
+.mosaic-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto;
+}
+
+.mosaic-item {
+  width: 100%;
+  max-width: 200px; /* Ajusta el ancho máximo de las miniaturas según tus necesidades */
+  margin: 10px;
+  gap: 10px;
+}
+
+.mosaic-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Añade bordes redondeados para un aspecto más estético */
 }

@@ -4,7 +4,7 @@ const words = ["novia", "reina hermosa", "amor", "señora :3", "Stefany ♡"];
 // Inicialización de variables
 let index = 0;
 let isDeleting = false;
-let speed = 150; // Velocidad de escritura
+let speed = 200; // Velocidad de escritura
 
 function type() {
   const currentWord = words[index];
