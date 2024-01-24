@@ -4,8 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cuenta atrás y Galería de Fotos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/cursor.css" />
+    <link rel="stylesheet" href="./css/player.css" />
+
     <!-- Incluye el enlace a jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Incluye el enlace a Owl Carousel -->
@@ -26,7 +34,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css"
     />
   </head>
-  <body>
+  <body class="night">
     <div id="dedication" class="hidden">
       <div id="dedication-content">
         <h1>
@@ -49,76 +57,260 @@
       <div id="photoCarousel" class="owl-carousel owl-theme"></div>
     </div>
 
+    <div class="dedication">
+      <span
+        >Quise recrear esta pequeña galeria, porque cuando tengo un dia malo
+        estas fotos nuestras mejoran enormemente el dia, el simple hecho de
+        saber que estas conmigo hace que me olvide de lo malo de mi dia</span
+      >
+    </div>
     <div id="mosaic" class="mosaic-container">
       <a
         href="/assets/mosaic/academia.jpg"
-        data-caption="Mensaje personalizado para la imagen 1"
+        data-caption="Este dia, lo recuerdo como si aun fuera ayer, te mirabas tan feliz, me senti orgulloso de estar junto a ti este dia, irradiabas luz :3 te mirabas tan hermosa :3"
         class="mosaic-item"
       >
         <img src="/assets/mosaic/academia.jpg" alt="Imagen 1" />
       </a>
       <a
         href="/assets/mosaic/caf-stef.jpg"
-        data-caption="Mensaje personalizado para la imagen 2"
+        data-caption="Aunque a ti no te guste esta foto me encanta porque te ves tan pero tan hermosa, tu sonrisa, tu pelo, tu carita toda preciosa:3"
         class="mosaic-item"
       >
         <img src="/assets/mosaic/caf-stef.jpg" alt="Imagen 2" />
       </a>
       <a
         href="/assets/mosaic/cafetin.jpg"
-        data-caption="Mensaje personalizado para la imagen 3"
+        data-caption="El primer dia que fuimos a tomarnos un cafe, siempre llevare ese recuerdo en mi corazon y en mi mente de lo feliz que me haz hecho todo este a&ntilde;o que llevamos juntos mi princesa"
         class="mosaic-item"
       >
         <img src="/assets/mosaic/cafetin.jpg" alt="Imagen 3" />
       </a>
       <a
         href="/assets/mosaic/leo.jpg"
-        data-caption="Mensaje personalizado para la imagen 4"
+        data-caption="Andar de noche y conversar y ver tu cara preciosa siempre sera una cita maravillosa para mi:3"
         class="mosaic-item"
       >
         <img src="/assets/mosaic/leo.jpg" alt="Imagen 4" />
       </a>
       <a
         href="/assets/mosaic/pup-stef.jpg"
-        data-caption="Mensaje personalizado para la imagen 4"
+        data-caption="Representas todo lo que me encanta en este vida, quiero y deseo que siempre formes parte de mi vida"
         class="mosaic-item"
       >
         <img src="/assets/mosaic/pup-stef.jpg" alt="Imagen 4" />
       </a>
       <a
         href="/assets/mosaic/pup2-stef.jpg"
-        data-caption="Mensaje personalizado para la imagen 4"
+        data-caption="Todo este proceso que hemos pasado juntos me hace super feliz, mas verte y recordar estos momentos especiales que hemos tenido hace que mi corazon sienta nervios, asi como la primera vez que salimos juntos:3"
         class="mosaic-item"
       >
         <img src="/assets/mosaic/pup2-stef.jpg" alt="Imagen 4" />
       </a>
       <a
         href="/assets/mosaic/pupusas-beso.jpg"
-        data-caption="Mensaje personalizado para la imagen 4"
+        data-caption="Eres mi persona favorita, mi amor, mi ni&ntilde;a, mi princesa, representas todo en mi vida"
         class="mosaic-item"
       >
         <img src="/assets/mosaic/pupusas-beso.jpg" alt="Imagen 4" />
       </a>
       <a
         href="/assets/mosaic/pupusas.jpg"
-        data-caption="Mensaje personalizado para la imagen 4"
+        data-caption="Verte sonriendo es lo mejor en mis dias malos y largos, haces que todo este bien, me haces sentir bien"
         class="mosaic-item"
       >
         <img src="/assets/mosaic/pupusas.jpg" alt="Imagen 4" />
       </a>
       <a
         href="/assets/mosaic/pupusas2.jpg"
-        data-caption="Mensaje personalizado para la imagen 4"
+        data-caption="Cada foto que tenemos juntos es un recuerdo y un presente del amor que ambos nos tenemos, te amo mucho mi amor, porfin encontre a la persona con la que quiero tener todo, un futuro, una vida, sonrisas, eres la persona que llego a mi vida a hacerme feliz:3"
         class="mosaic-item"
       >
         <img src="/assets/mosaic/pupusas2.jpg" alt="Imagen 4" />
       </a>
+      <a
+        href="/assets/mosaic/museo.jpg"
+        data-caption="Aun recuerdo esta foto y me encanta, representa un momento importante en mi vida, un dia antes de irme a Honduras, verte fue una de las mejores cosas que me paso, porque muy en el fondo sabia que te extrañaria mucho."
+        class="mosaic-item"
+      >
+        <img src="/assets/mosaic/museo.jpg" alt="Imagen 4" />
+      </a>
+      <a
+        href="/assets/mosaic/First.jpg"
+        data-caption="Esta foto, me acuerdo que cuando nos empezamos a tomar fotos, me puse nervioso, porque en el fondo me parecias linda, pero al tomarnos fotos fue como una señal, queria estar contigo, me parecias muy linda, hermosa, inteligente y divertida :3"
+        class="mosaic-item"
+      >
+        <img src="/assets/mosaic/First.jpg" alt="Imagen 4" />
+      </a>
+      <a
+        href="/assets/mosaic/know.jpg"
+        data-caption="Posiblemente una de las primeras fotos que nos hemos tomado, ese dia, te mirabas radiante, preciosa, hermosa, y sobretodo, al tomarte de la mano, fue como si algo me dijera que eras para mi, tomarte de la mano ese dia fue una de las mejores cosas que hice ❤"
+        class="mosaic-item"
+      >
+        <img src="/assets/mosaic/know.jpg" alt="Imagen 4" />
+      </a>
+      <a
+        href="/assets/mosaic/church.jpg"
+        data-caption="Ese dia, al verte entrar a la iglesia, me senti super especial, eres la primera persona que esta conmigo en las pocas cosas que hago, me senti en una nube al verte entrar jsjsjs, se sintio tan bien verte sentada frente a donde estaba, y luego tomarnos esa foto, solo tenia ganas de abrazarte"
+        class="mosaic-item"
+      >
+        <img src="/assets/mosaic/church.jpg" alt="Imagen 4" />
+      </a>
     </div>
+
+    <div id="song-info"></div>
+    <div
+      style="
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      "
+    >
+      <div id="player" style="width: 100%">
+        <audio id="audio" controls>
+          <source id="audioSource" src="" type="audio/mp3" />
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+        <ul id="playlist"></ul>
+        <button onclick="togglePlayPause()">Reproducir/Pausar</button>
+      </div>
+    </div>
+
+    <div>
+      <a href="/routes/dedicatoria.html">Tengo un regalo para ti:3</a> <br />
+      <a href="#!">Ademas, te dedico todo esto que me recuerda a ti:3"</a>
+    </div>
+
+    <script>
+      const audio = document.getElementById("audio");
+      const audioSource = document.getElementById("audioSource");
+      const playlist = document.getElementById("playlist");
+      const songInfoContainer = document.getElementById("song-info");
+
+      const songs = [
+        {
+          title: "The Lady in Red",
+          artist: "Chris De Burgh",
+          source: "./musica/Chris De Burgh - The Lady In Red.mp3",
+          cover:
+            "https://s.mxmcdn.net/images-storage/albums/1/9/5/9/9/3/11399591_350_350.jpg",
+        },
+        {
+          title: "Can't Help Falling In Love",
+          artist: "Elvis Presley",
+          source: "./musica/Elvis Presley - Can't Help Falling In Love.mp3",
+          cover:
+            "https://s.mxmcdn.net/images-storage/albums/4/1/1/7/5/0/12057114_350_350.jpg",
+        },
+        {
+          title: "All of Me (Extended)",
+          artist: "John Legend",
+          source: "./musica/John Legend - All of Me.mp3",
+          cover:
+            "https://s.mxmcdn.net/images-storage/albums/0/2/6/6/2/1/32126620_350_350.jpg",
+        },
+        {
+          title: "Cuando vayas conmigo",
+          artist: "José José",
+          source: "./musica/José José - Cuando Vayas Conmigo.mp3",
+          cover:
+            "https://s.mxmcdn.net/images-storage/albums/0/2/7/6/7/6/11676720_350_350.jpg",
+        },
+        {
+          title: "Quiero perderme contigo",
+          artist: "José José",
+          source: "./musica/José José - Quiero Perderme Contigo.mp3",
+          cover:
+            "https://s.mxmcdn.net/images-storage/albums/0/2/7/6/7/6/11676720_350_350.jpg",
+        },
+        {
+          title: "Cinnamon Girl",
+          artist: "Lana Del Rey",
+          source: "./musica/Lana Del Rey - Cinnamon Girl.mp3",
+          cover:
+            "https://s.mxmcdn.net/images-storage/albums2/6/0/2/0/6/5/45560206_350_350.jpg",
+        },
+        {
+          title: "Something About Us",
+          artist: "Macklemore & ",
+          source: "./musica/Daft Punk - Something About Us.mp3",
+          cover:
+            "https://s.mxmcdn.net/images-storage/albums/9/5/3/9/4/7/26749359_350_350.jpg",
+        },
+        // Agrega más canciones según sea necesario
+      ];
+
+      const backgroundColors = [
+        "#ffd1dc",
+        "#ffd700",
+        "#98fb98",
+        "#dda0dd",
+        "#ffb6c1",
+        "#add8e6",
+        "#ffb347",
+        "#87cefa",
+        "#f0e68c",
+        "#ffcccb",
+        "#98fb98",
+        "#f0fff0",
+        "#ffe4c4",
+        "#dda0dd",
+        "#ffb6c1",
+      ];
+
+      songs.forEach((song, index) => {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `
+                <img src="${song.cover}" alt="Portada" width="150" height="150">
+                <div class="song-info">
+                    <div>${song.title}</div>
+                    <div>${song.artist}</div>
+                </div>
+            `;
+        listItem.addEventListener("click", () => changeTrack(index));
+        playlist.appendChild(listItem);
+      });
+
+      function changeTrack(index) {
+        const selectedSong = songs[index];
+        audioSource.src = selectedSong.source;
+        audio.load();
+        audio.play();
+
+        // Cambiar el color de fondo suavemente al reproducir una nueva canción
+        const randomColor =
+          backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+        document.getElementById("player").style.backgroundColor = randomColor;
+
+        // Actualizar la información de la canción seleccionada
+        songInfoContainer.innerHTML = `
+                <img src="${selectedSong.cover}" alt="Portada" width="150" height="150">
+                <div class="song-info">
+                    <div>${selectedSong.title}</div>
+                    <div>${selectedSong.artist}</div>
+                </div>
+            `;
+      }
+
+      function togglePlayPause() {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    </script>
 
     <!-- Incluye el enlace a Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Incluye el enlace a Fancybox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    ></script>
+
     <script src="./js/countdown.js"></script>
     <script src="./js/gallery.js"></script>
     <script src="./js/cursor-p.js"></script>
