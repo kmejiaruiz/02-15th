@@ -1,5 +1,5 @@
 // Array de palabras a mostrar
-const word = ["mi luz", "mi alegria", "mi amor eterno", "mi futura esposa", "mi princesa"];
+const word = ["luz", "alegria", "amor eterno", "futura esposa", "princesa"];
 
 // Inicialización de variables
 let start = 0;
