@@ -10,6 +10,11 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/cursor.css" />
     <link rel="stylesheet" href="./css/player.css" />
@@ -158,22 +163,46 @@
       </a>
     </div>
 
-    <div id="song-info"></div>
     <div
       style="
         width: 100%;
         justify-content: center;
         align-items: center;
         display: flex;
+        flex-direction: column;
       "
     >
       <div id="player" style="width: 100%">
-        <audio id="audio" controls>
+        <div id="song-info"></div>
+        <audio
+          id="audio"
+          controls
+          onloadeddata="hideSpinner()"
+          onended="playNextTrack()"
+          onplay="showNowPlaying()"
+        >
+          <button onclick="togglePlayPause()">Reproducir/Pausar</button>
           <source id="audioSource" src="" type="audio/mp3" />
           Tu navegador no soporta el elemento de audio.
         </audio>
+        <div class="spinner" id="spinner"></div>
+        <div class="mosaic-lines">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="now-playing-container" id="nowPlayingContainer">
+          Now Playing
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 4px; margin-top: 10px;">
+          <!-- <button onclick="togglePlayPause()">Play/Pause</button> -->
+          <button onclick="playPreviousTrack()">Forward</button>
+          <button onclick="playNextTrack()">Next</button>
+          <!-- <button onclick="toggleRandom()">Random</button> -->
+          <!-- <button onclick="toggleLoop()">Loop</button> -->
+        </div>
+
         <ul id="playlist"></ul>
-        <button onclick="togglePlayPause()">Reproducir/Pausar</button>
       </div>
     </div>
 
@@ -182,125 +211,7 @@
       <a href="#!">Ademas, te dedico todo esto que me recuerda a ti:3"</a>
     </div>
 
-    <script>
-      const audio = document.getElementById("audio");
-      const audioSource = document.getElementById("audioSource");
-      const playlist = document.getElementById("playlist");
-      const songInfoContainer = document.getElementById("song-info");
-
-      const songs = [
-        {
-          title: "The Lady in Red",
-          artist: "Chris De Burgh",
-          source: "./musica/Chris De Burgh - The Lady In Red.mp3",
-          cover:
-            "https://s.mxmcdn.net/images-storage/albums/1/9/5/9/9/3/11399591_350_350.jpg",
-        },
-        {
-          title: "Can't Help Falling In Love",
-          artist: "Elvis Presley",
-          source: "./musica/Elvis Presley - Can't Help Falling In Love.mp3",
-          cover:
-            "https://s.mxmcdn.net/images-storage/albums/4/1/1/7/5/0/12057114_350_350.jpg",
-        },
-        {
-          title: "All of Me (Extended)",
-          artist: "John Legend",
-          source: "./musica/John Legend - All of Me.mp3",
-          cover:
-            "https://s.mxmcdn.net/images-storage/albums/0/2/6/6/2/1/32126620_350_350.jpg",
-        },
-        {
-          title: "Cuando vayas conmigo",
-          artist: "José José",
-          source: "./musica/José José - Cuando Vayas Conmigo.mp3",
-          cover:
-            "https://s.mxmcdn.net/images-storage/albums/0/2/7/6/7/6/11676720_350_350.jpg",
-        },
-        {
-          title: "Quiero perderme contigo",
-          artist: "José José",
-          source: "./musica/José José - Quiero Perderme Contigo.mp3",
-          cover:
-            "https://s.mxmcdn.net/images-storage/albums/0/2/7/6/7/6/11676720_350_350.jpg",
-        },
-        {
-          title: "Cinnamon Girl",
-          artist: "Lana Del Rey",
-          source: "./musica/Lana Del Rey - Cinnamon Girl.mp3",
-          cover:
-            "https://s.mxmcdn.net/images-storage/albums2/6/0/2/0/6/5/45560206_350_350.jpg",
-        },
-        {
-          title: "Something About Us",
-          artist: "Macklemore & ",
-          source: "./musica/Daft Punk - Something About Us.mp3",
-          cover:
-            "https://s.mxmcdn.net/images-storage/albums/9/5/3/9/4/7/26749359_350_350.jpg",
-        },
-        // Agrega más canciones según sea necesario
-      ];
-
-      const backgroundColors = [
-        "#ffd1dc",
-        "#ffd700",
-        "#98fb98",
-        "#dda0dd",
-        "#ffb6c1",
-        "#add8e6",
-        "#ffb347",
-        "#87cefa",
-        "#f0e68c",
-        "#ffcccb",
-        "#98fb98",
-        "#f0fff0",
-        "#ffe4c4",
-        "#dda0dd",
-        "#ffb6c1",
-      ];
-
-      songs.forEach((song, index) => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-                <img src="${song.cover}" alt="Portada" width="150" height="150">
-                <div class="song-info">
-                    <div>${song.title}</div>
-                    <div>${song.artist}</div>
-                </div>
-            `;
-        listItem.addEventListener("click", () => changeTrack(index));
-        playlist.appendChild(listItem);
-      });
-
-      function changeTrack(index) {
-        const selectedSong = songs[index];
-        audioSource.src = selectedSong.source;
-        audio.load();
-        audio.play();
-
-        // Cambiar el color de fondo suavemente al reproducir una nueva canción
-        const randomColor =
-          backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
-        document.getElementById("player").style.backgroundColor = randomColor;
-
-        // Actualizar la información de la canción seleccionada
-        songInfoContainer.innerHTML = `
-                <img src="${selectedSong.cover}" alt="Portada" width="150" height="150">
-                <div class="song-info">
-                    <div>${selectedSong.title}</div>
-                    <div>${selectedSong.artist}</div>
-                </div>
-            `;
-      }
-
-      function togglePlayPause() {
-        if (audio.paused) {
-          audio.play();
-        } else {
-          audio.pause();
-        }
-      }
-    </script>
+    <noscript>Turn on JS Options to access.</noscript>
 
     <!-- Incluye el enlace a Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -310,11 +221,15 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     ></script>
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="./js/countdown.js"></script>
     <script src="./js/gallery.js"></script>
     <script src="./js/cursor-p.js"></script>
     <script src="./js/cursor-h.js"></script>
     <script src="./js/mosaic.js"></script>
+    <script src="./js/player.js"></script>
   </body>
 </html>
