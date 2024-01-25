@@ -1,15 +1,15 @@
 $(document).ready(function () {
   const photoPaths = [
-    "/assets/p1.jpg",
-    "/assets/p2.jpg",
-    "/assets/p3.jpg",
-    "/assets/p4.jpg",
-    "/assets/p5.jpg",
-    "/assets/p6.jpg",
-    "/assets/p7.jpg",
-    "/assets/p8.jpg",
-    "/assets/p9.jpg",
-    "/assets/p10.jpg",
+    "./assets/p1.jpg",
+    "./assets/p2.jpg",
+    "./assets/p3.jpg",
+    "./assets/p4.jpg",
+    "./assets/p5.jpg",
+    "./assets/p6.jpg",
+    "./assets/p7.jpg",
+    "./assets/p8.jpg",
+    "./assets/p9.jpg",
+    "./assets/p10.jpg",
   ];
   const photoCarousel = $("#photoCarousel");
 
