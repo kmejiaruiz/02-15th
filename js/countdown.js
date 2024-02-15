@@ -10,6 +10,7 @@ $(document).ready(function () {
       document.getElementById("countdown").style.display = "none";
       document.getElementById("dedication").style.display = "block";
       document.getElementById("gallery").style.display = "block";
+      // document.getElementById("gallery").style.display = "block";
     } else {
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
